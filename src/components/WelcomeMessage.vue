@@ -6,11 +6,9 @@ const items = ref([{ message: 'Foo' }, { message: 'Bar' }])
 
 <template>
   <div class="greetings">
-    <h1 class="green">Welcome to the Todo List</h1>
+    <h1 class="green">Welcome to the To-do List</h1>
     <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+      You can use the to-do list to keep track of your tasks!
     </h3>
   </div>
 </template>
