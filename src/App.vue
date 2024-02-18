@@ -1,5 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import TodoList from './components/TodoList.vue'
+import TodoFooter from './components/TodoFooter.vue'
 </script>
 
 <template>
@@ -12,7 +14,12 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <main>
+    <TodoList />
   </main>
+
+  <footer>
+    <TodoFooter />
+  </footer>
 </template>
 
 <style scoped>
