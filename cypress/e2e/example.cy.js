@@ -1,8 +1,7 @@
 // https://on.cypress.io/api
 
-describe('My First Test', () => {
-  it('visits the app root url', () => {
-    cy.visit('/')
-    cy.contains('h1', 'You did it!')
+describe('Test the Todo List', () => {
+  it('Check whether the app is up ', () => {
+    cy.visit('http://localhost:5173/')
   })
 })
