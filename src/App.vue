@@ -12,16 +12,18 @@ const todoLists = ref([
 const newTodoList = ref('')
 
 function submitTodoList() {
-  console.log('a')
   if (newTodoList.value.trim() !== '') {
     let newList = {
       id: 3,
       name: newTodoList.value.trim()
     }
-    console.log('b')
     todoLists.value.push(newList);
     newTodoList.value = ''; // Clear the input field after submitting
   }
+}
+
+function clearTodoLists() {
+  todoLists.value = []
 }
 
 </script>
@@ -42,6 +44,7 @@ function submitTodoList() {
   <footer>
     <input type="text" placeholder="Enter TodoList " v-model="newTodoList" />
     <button @click="submitTodoList">Submit</button>
+    <button @click="clearTodoLists">Clear All</button>
     <TodoFooter />
   </footer>
 </template>
