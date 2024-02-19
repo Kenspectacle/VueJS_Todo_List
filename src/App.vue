@@ -5,9 +5,24 @@ import TodoFooter from './components/TodoFooter.vue'
 import { ref } from 'vue'
 
 const todoLists = ref([
-  { id: 1, name: 'first todo list'},
-  { id: 2, name: 'second todo list'}
+  { id: 1, name: 'first todo list' },
+  { id: 2, name: 'second todo list' }
 ])
+
+const newTodoList = ref('')
+
+function submitTodoList() {
+  console.log('a')
+  if (newTodoList.value.trim() !== '') {
+    let newList = {
+      id: 3,
+      name: newTodoList.value.trim()
+    }
+    console.log('b')
+    todoLists.value.push(newList);
+    newTodoList.value = ''; // Clear the input field after submitting
+  }
+}
 
 </script>
 
@@ -21,7 +36,7 @@ const todoLists = ref([
   </header>
 
   <main>
-    <TodoList v-for="todoList in todoLists" :name="todoList.name"/>
+    <TodoList v-for="todoList in todoLists" :name="todoList.name" />
   </main>
 
   <footer>
