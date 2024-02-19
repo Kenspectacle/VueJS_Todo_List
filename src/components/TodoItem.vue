@@ -1,6 +1,7 @@
 <script setup>
 import TodoDeleteButton from './buttons/TodoDeleteButton.vue'
 import TodoEditButton from './buttons/TodoEditButton.vue'
+import { ref } from 'vue'
 
 defineProps({
     msg: {
@@ -13,6 +14,7 @@ defineProps({
     }
 })
 
+const isShowingDetail = ref(false)
 </script>
 
 <template>
@@ -20,7 +22,7 @@ defineProps({
         <TodoEditButton />
         <TodoDeleteButton />
         <ul>
-            <li> {{ detail }}</li>
+            <li v-if="isShowingDetail"> {{ detail }}</li>
         </ul>
     </li>
 </template>
