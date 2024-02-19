@@ -2,6 +2,13 @@
 import WelcomeMessage from './components/WelcomeMessage.vue'
 import TodoList from './components/TodoList.vue'
 import TodoFooter from './components/TodoFooter.vue'
+import { ref } from 'vue'
+
+const todoLists = ref([
+  { id: 1, name: 'first todo list'},
+  { id: 2, name: 'second todo list'}
+])
+
 </script>
 
 <template>
@@ -14,10 +21,12 @@ import TodoFooter from './components/TodoFooter.vue'
   </header>
 
   <main>
-    <TodoList />
+    <TodoList v-for="todoList in todoLists" :name="todoList.name"/>
   </main>
 
   <footer>
+    <input type="text" placeholder="Enter TodoList " v-model="newTodoList" />
+    <button @click="submitTodoList">Submit</button>
     <TodoFooter />
   </footer>
 </template>

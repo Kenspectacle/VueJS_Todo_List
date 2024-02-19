@@ -2,11 +2,19 @@
 import TodoItem from './TodoItem.vue'
 import { ref } from 'vue'
 
+defineProps({
+    name: {
+        type: String,
+        required: true
+    }
+})
+
 const items = ref([
     { id: 1, message: 'Foo', detail: 'lorem ipsum' },
     { id: 2, message: 'Bar', detail: 'lorem ipsum' }])
 
 const newTask = ref('');
+
 
 function submitTask() {
     if (newTask.value.trim() !== '') {
@@ -28,7 +36,7 @@ function clearTasks() {
 
 
 <template>
-    <h2>The Todo List: </h2>
+    <h2>{{ name }}: </h2>
     <ul>
         <TodoItem v-for="item in items" :msg="item.message" :detail="item.detail" />
     </ul>
