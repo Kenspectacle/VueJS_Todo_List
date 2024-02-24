@@ -35,6 +35,15 @@ function clearTodoLists() {
     <div class="wrapper">
       <WelcomeMessage />
     </div>
+
+
+    <div class="todolists">
+      <ul>
+        <li v-for="todoList in todoLists">
+          <button>{{ todoList.name }}</button>
+        </li>
+      </ul>
+    </div>
   </header>
 
   <main>
